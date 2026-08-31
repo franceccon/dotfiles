@@ -12,7 +12,7 @@ in
       package = pkgs.zed-editor-fhs;
       extensions = [
         "nix"
-        "rose-pine-theme"
+        "catppuccin"
         "toml"
       ];
       userSettings = {
@@ -36,9 +36,9 @@ in
         };
         auto_update = false;
         theme = {
-          mode = "system";
-          light = "Rosé Pine Dawn";
-          dark = "Rosé Pine";
+          mode = "light";
+          light = "Catppuccin Latte";
+          dark = "Catppuccin Latte";
         };
         edit_predictions = {
           provider = "zed";

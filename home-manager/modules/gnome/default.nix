@@ -26,7 +26,7 @@ in
         monospace-font-name = "Monospace 14";
         font-name = "Noto Sans Medium 11 @wght=500";
         document-font-name = "Noto Sans Medium 11 @wght=500";
-        color-scheme = "prefer-dark";
+        color-scheme = "prefer-light";
         accent-color = "pink";
       };
 

@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   require('catppuccin').setup {
-    flavour = "mocha",
+    flavour = "latte",
   }
   vim.cmd.colorscheme 'catppuccin'
 
@@ -67,7 +67,7 @@ function M.setup()
   })
 
   -- window selector
-  vim.cmd[[hi NvimWindowNormal guibg=#ebbcba guifg=#191724]]
+  vim.cmd[[hi NvimWindowNormal guibg=#dd7878 guifg=#eff1f5]]
   require('nvim-window').setup {
     normal_hl = 'NvimWindowNormal',
     hint_hl = 'Bold',
