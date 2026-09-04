@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
 
       and updating the sha256 below if necessary.
     '';
-    sha256 = "0hwqrsb8rr2h7g71qx703gsnwcrka13n8zc8y0m6qwld9pj042xs";
+    sha256 = "1hbj43w4wkiivp0b8f9zsc13q6vwml3gs9041wxxw3a8m4a95w23";
   };
 
   nativeBuildInputs = [
