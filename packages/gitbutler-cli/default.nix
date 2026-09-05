@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   name = "gitbutler-cli";
-  version = "0.22.0-3180";
+  version = "0.22.3-3234";
 
   src = fetchurl {
     url = "https://releases.gitbutler.com/releases/release/${version}/linux/x86_64/but";
-    sha256 = "sha256-iOixVQ3BKVBoZ1rWdpwYRlAK5cN+9XQ7akXqqrGryBI=";
+    sha256 = "sha256-P09UOmzNkxzmyGxIQFjb5eKUOVl9AB9qCpwo2eUz6hg=";
   };
 
   nativeBuildInputs = with pkgs; [
