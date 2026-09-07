@@ -4,13 +4,11 @@ let
 in
 self: super: {
   # from flakes
-  # https://github.com/anomalyco/opencode/issues/23256#issuecomment-4276583712
+  # v2 installs the binary as `opencode2`; expose it as `opencode` so the
+  # rest of the config (zed, home-manager module) keeps working unchanged.
   opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode.overrideAttrs (old: {
-    preBuild = (old.preBuild or "") + ''
-      substituteInPlace packages/opencode/src/cli/cmd/generate.ts \
-        --replace-fail 'const prettier = await import("prettier")' 'const prettier: any = { format: async (s: string) => s }' \
-        --replace-fail 'const babel = await import("prettier/plugins/babel")' 'const babel = {}' \
-        --replace-fail 'const estree = await import("prettier/plugins/estree")' 'const estree = {}'
+    postInstall = (old.postInstall or "") + ''
+      ln -sf opencode2 $out/bin/opencode
     '';
   });
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
