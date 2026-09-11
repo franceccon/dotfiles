@@ -47,6 +47,7 @@ self: super: {
   msty = super.callPackage ../packages/msty { };
   mailspring = super.callPackage ../packages/mailspring { };
   smile = super.callPackage ../packages/smile { };
+  tldraw = super.callPackage ../packages/tldraw { };
   en-croissant = super.callPackage ../packages/en-croissant { };
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };

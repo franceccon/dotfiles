@@ -55,6 +55,8 @@
 
     # dev
     python315
+    nodejs_26
+    pnpm_11
     secretspec
     docker-client
     git
@@ -129,6 +131,7 @@
     gcolor3
     xournalpp
     cherry-studio
+    tldraw
     # photo
     nufraw-thumbnailer
     art

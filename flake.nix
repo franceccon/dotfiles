@@ -171,6 +171,7 @@
             mailspring = pkgs.mailspring;
             smile = pkgs.smile;
             msty = pkgs.msty;
+            tldraw = pkgs.tldraw;
             en-croissant = pkgs.en-croissant;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
