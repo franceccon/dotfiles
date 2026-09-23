@@ -52,6 +52,7 @@ self: super: {
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };
   darktable = super.callPackage ../packages/darktable { withAi = true; };
+  cap = super.callPackage ../packages/cap { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   pragmata-pro = super.callPackage ../packages/pragmata-pro { };

@@ -132,6 +132,7 @@
     xournalpp
     cherry-studio
     tldraw
+    cap
     # photo
     nufraw-thumbnailer
     art

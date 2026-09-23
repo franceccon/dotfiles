@@ -172,6 +172,7 @@
             smile = pkgs.smile;
             msty = pkgs.msty;
             tldraw = pkgs.tldraw;
+            cap = pkgs.cap;
             en-croissant = pkgs.en-croissant;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
