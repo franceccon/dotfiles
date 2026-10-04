@@ -33,7 +33,7 @@
     };
 
     opencode = {
-      url = "github:anomalyco/opencode/v2";
+      url = "github:anomalyco/opencode";
     };
 
     tuicr = {

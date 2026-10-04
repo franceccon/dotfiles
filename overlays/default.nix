@@ -4,13 +4,7 @@ let
 in
 self: super: {
   # from flakes
-  # v2 installs the binary as `opencode2`; expose it as `opencode` so the
-  # rest of the config (zed, home-manager module) keeps working unchanged.
-  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode.overrideAttrs (old: {
-    postInstall = (old.postInstall or "") + ''
-      ln -sf opencode2 $out/bin/opencode
-    '';
-  });
+  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
   tuicr = inputs.tuicr.packages.${self.stdenv.hostPlatform.system}.default;
 

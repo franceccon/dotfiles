@@ -13,6 +13,8 @@ in
       font-family = "monospace"
       font-size = 13
       theme = "Catppuccin Latte"
+      window-width = 100
+      window-height = 30
       window-inherit-working-directory = false
     '';
   };
