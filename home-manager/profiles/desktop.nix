@@ -90,6 +90,8 @@
     kubelogin
     kubelogin-oidc
     kubernetes-helm
+    kind
+    cloud-provider-kind
     bun
     clinfo
     gitbutler-cli
