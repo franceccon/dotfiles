@@ -49,7 +49,8 @@ self: super: {
   cap = super.callPackage ../packages/cap { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
-  pragmata-pro = super.callPackage ../packages/pragmata-pro { };
+  paper-mono = super.callPackage ../packages/paper-mono { };
+  # pragmata-pro = super.callPackage ../packages/pragmata-pro { };
   # monolisa = super.callPackage ../packages/monolisa { };
 
   # neeeded by other packages

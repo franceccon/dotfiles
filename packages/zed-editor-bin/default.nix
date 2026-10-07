@@ -8,11 +8,11 @@
 }:
 stdenv.mkDerivation rec {
   name = "zed-editor";
-  version = "1.17.2";
+  version = "1.22.0";
 
   src = fetchurl {
     url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz";
-    sha256 = "sha256-NoLdBYowXSskahTWRBn89C6GoG4ndV0jtaKGIu2a74U=";
+    sha256 = "sha256-XOOZGzSo+tCiNiX1ghzaYBxxUKbMaWg8CXuNGwg6vFA=";
   };
 
   nativeBuildInputs = [
@@ -23,12 +23,13 @@ stdenv.mkDerivation rec {
   # Libraries needed for Zed to run
   buildInputs = with pkgs; [
     stdenv.cc.cc.lib
+    glib
     libGL
     libxkbcommon
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXrandr
+    libx11
+    libxcursor
+    libxi
+    libxrandr
     openssl
     alsa-lib
     vulkan-loader

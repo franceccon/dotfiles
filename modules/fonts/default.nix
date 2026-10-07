@@ -19,7 +19,7 @@ in
         noto-fonts-cjk-serif
 
         berkeley-mono
-        pragmata-pro
+        paper-mono
         jetbrains-mono
       ];
 
@@ -27,7 +27,7 @@ in
         defaultFonts = {
           serif = [ "Noto Serif" ];
           sansSerif = [ "Noto Sans" ];
-          monospace = [ "Berkeley Mono" ];
+          monospace = [ "Paper Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
       };

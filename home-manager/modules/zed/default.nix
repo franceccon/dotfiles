@@ -27,12 +27,13 @@ in
         ui_font_size = 17;
         buffer_font_size = 17;
         buffer_line_height = "standard";
-        ui_font_family = "Berkeley Mono";
-        buffer_font_family = "Berkeley Mono";
-        buffer_font_weight = 200;
+        ui_font_family = "Paper Mono";
+        buffer_font_family = "Paper Mono";
+        buffer_font_weight = 400;
         buffer_font_features = {
-          calt = false;
-          cv14 = true;
+          ss01 = false; # ligatures
+          cv01 = true; # alt a
+          zero = true; # slashed 0
         };
         auto_update = false;
         theme = {

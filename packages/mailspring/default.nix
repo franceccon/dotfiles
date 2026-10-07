@@ -14,10 +14,14 @@
 , nss
 , openssl
 , udev
-, xorg
 , mesa
 , libdrm
 , libappindicator
+, libxkbfile
+, libxdamage
+, libxscrnsaver
+, libxtst
+, libxshmfence
 }:
 
 stdenv.mkDerivation rec {
@@ -43,11 +47,11 @@ stdenv.mkDerivation rec {
     libkrb5
     libsecret
     nss
-    xorg.libxkbfile
-    xorg.libXdamage
-    xorg.libXScrnSaver
-    xorg.libXtst
-    xorg.libxshmfence
+    libxkbfile
+    libxdamage
+    libxscrnsaver
+    libxtst
+    libxshmfence
     mesa
     libdrm
   ];

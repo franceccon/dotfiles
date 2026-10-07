@@ -166,7 +166,7 @@
             ghostty = pkgs.ghostty;
             amp-cli = pkgs.amp-cli;
             berkeley-mono = pkgs.berkeley-mono;
-            pragmata-pro = pkgs.pragmata-pro;
+            paper-mono = pkgs.paper-mono;
             # office
             mailspring = pkgs.mailspring;
             smile = pkgs.smile;
