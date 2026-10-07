@@ -11,6 +11,7 @@ in
 
     xdg.configFile."ghostty/config".text = ''
       font-family = "monospace"
+      font-feature = "zero, cv01"
       font-size = 13
       theme = "Catppuccin Latte"
       window-width = 100

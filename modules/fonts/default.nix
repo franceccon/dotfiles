@@ -30,6 +30,21 @@ in
           monospace = [ "Paper Mono" ];
           emoji = [ "Noto Color Emoji" ];
         };
+        localConf = ''
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+          <fontconfig>
+            <match target="font">
+              <test name="family" compare="eq">
+                <string>Paper Mono</string>
+              </test>
+              <edit name="fontfeatures" mode="append">
+                <string>cv01 on</string>
+                <string>zero on</string>
+              </edit>
+            </match>
+          </fontconfig>
+        '';
       };
     };
   };
