@@ -23,7 +23,11 @@
     nftables.enable = true;
     firewall = {
       enable = true;
-      trustedInterfaces = [ config.services.tailscale.interfaceName ];
+      trustedInterfaces = [
+        config.services.tailscale.interfaceName
+        "cni0"
+        "flannel.1"
+      ];
       allowedUDPPorts = [ config.services.tailscale.port ];
       allowedTCPPorts = [ 22 ];
     };
@@ -60,6 +64,17 @@
   systemd.services.tailscaled.serviceConfig.Environment = [
     "TS_DEBUG_FIREWALL_MODE=nftables"
   ];
+
+  # Access the API through host Tailscale; expose workloads with the Tailscale operator.
+  services.k3s = {
+    enable = true;
+    role = "server";
+    disable = [ "traefik" "servicelb" ];
+    extraFlags = [
+      "--tls-san=nixnas"
+      "--tls-san=nixnas.tail2ebe64.ts.net"
+    ];
+  };
 
   # Setup samba
   services.samba = {
