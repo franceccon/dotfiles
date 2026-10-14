@@ -11,7 +11,7 @@
       zed.enable = true;
       k9s.enable = true;
       ghostty.enable = true;
-      opencode.enable = true;
+      opencode.enable = false;
       ampcode.enable = true;
     };
     i18n.enable = true;

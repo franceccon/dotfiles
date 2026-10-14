@@ -36,7 +36,12 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    kind
+    cloud-provider-kind
   ];
+
+  virtualisation.docker.enable = true;
+  users.users.fra.extraGroups = [ "docker" ];
 
   # Allow SSH access.
   services.openssh = {
