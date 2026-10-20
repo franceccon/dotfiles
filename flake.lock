@@ -360,6 +360,7 @@
         "nur": "nur",
         "opencode": "opencode",
         "oxalica": "oxalica",
+        "secretspec": "secretspec",
         "tuicr": "tuicr"
       }
     },
@@ -377,6 +378,23 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "secretspec": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790467357,
+        "narHash": "sha256-8OC1WS8VWTSwUJlT/qWx9CCPmO90G2OWJxEKZGUgXqM=",
+        "owner": "cachix",
+        "repo": "secretspec",
+        "rev": "5a8927d2b800c604fee72970ffbd137c57820fd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "ref": "v0.21.1",
+        "repo": "secretspec",
         "type": "github"
       }
     },

@@ -10,6 +10,25 @@ self: super: {
 
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
+  secretspec = super.secretspec.overrideAttrs (old: {
+    version = "0.21.1";
+    src = inputs.secretspec;
+    cargoBuildFlags = [ "--package" "secretspec" ];
+    cargoTestFlags = [ "--package" "secretspec" ];
+    nativeCheckInputs = [ self.git self.jq self.sops self.cacert ];
+    postPatch = (old.postPatch or "") + ''
+      patchShebangs secretspec/tests/fixtures
+    '';
+    preCheck = ''
+      export HOME=$(mktemp -d)
+      export SSL_CERT_FILE=${self.cacert}/etc/ssl/certs/ca-bundle.crt
+      export NO_COLOR=1
+    '';
+    cargoDeps = self.rustPlatform.fetchCargoVendor {
+      src = inputs.secretspec;
+      hash = "sha256-48k3UKeT8qjRRLrf5yqmxULIynD6FgXiW063VEoTqmU=";
+    };
+  });
   zed-editor-bin = super.callPackage ../packages/zed-editor-bin { };
   zed-editor-fhs = self.buildFHSEnv {
     name = "zed";

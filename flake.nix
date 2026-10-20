@@ -39,6 +39,11 @@
     tuicr = {
       url = "github:agavra/tuicr";
     };
+
+    secretspec = {
+      url = "github:cachix/secretspec/v0.21.1";
+      flake = false;
+    };
   };
 
   outputs =
@@ -157,6 +162,7 @@
             delta-bin = pkgs.delta-bin;
             opencode = pkgs.opencode;
             tuicr = pkgs.tuicr;
+            secretspec = pkgs.secretspec;
             apalache = pkgs.apalache;
             dagger = pkgs.dagger;
             quint = pkgs.quint;
