@@ -42,6 +42,7 @@ in
           "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "Vitals@CoreCoding.com"
           "tilingshell@ferrarodomenico.com"
+          "tailscale-gnome@diskmth.fr"
         ];
         favorite-apps = [
           "com.mitchellh.ghostty.desktop"
