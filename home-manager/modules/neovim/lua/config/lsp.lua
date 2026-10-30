@@ -22,52 +22,30 @@ function M.setup()
 
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  -- advertise capabilities to lsp servers
-  local lspconfig = require('lspconfig')
-  lspconfig.rust_analyzer.setup {
+  vim.lsp.config('*', {
     capabilities = capabilities,
-  }
-  lspconfig.tsserver.setup {
-    capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern("package.json"),
-    single_file_support = false,
-  }
-  lspconfig.denols.setup {
-    capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-  }
-  lspconfig.pylsp.setup {
-    capabilities = capabilities,
-  }
-  lspconfig.gopls.setup {
-    capabilities = capabilities,
-  }
-  lspconfig.ocamllsp.setup {
-    capabilities = capabilities,
-  }
+  })
+  vim.lsp.config('ts_ls', {
+    root_dir = function(bufnr, on_dir)
+      local deno_root = vim.fs.root(bufnr, { 'deno.json', 'deno.jsonc' })
+      if not deno_root then
+        local root = vim.fs.root(bufnr, { 'package.json' })
+        if root then on_dir(root) end
+      end
+    end,
+    workspace_required = true,
+  })
+  vim.lsp.enable { 'rust_analyzer', 'ts_ls', 'denols', 'pylsp', 'gopls', 'ocamllsp' }
 
-  -- require('lspsaga').setup {
-  --   ui = {
-  --     title = false,
-  --     devicon = false,
-  --   },
-  --   lightbulb = {
-  --     enabled = true,
-  --     sign = false,
-  --   },
-  --   symbol_in_winbar = {
-  --     enable = false,
-  --   },
-  -- }
-
-  require('rust-tools').setup {
-    tools = {
-      reload_workspace_from_cargo_toml = true,
-      inlay_hints = {
-        auto = true,
-      },
-    },
-  }
+  vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('config-lsp', { clear = true }),
+    callback = function(event)
+      local client = vim.lsp.get_client_by_id(event.data.client_id)
+      if client and client:supports_method('textDocument/inlayHint', event.buf) then
+        vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+      end
+    end,
+  })
 end
 
 return M

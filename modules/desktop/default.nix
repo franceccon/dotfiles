@@ -160,6 +160,7 @@ in
     services.tailscale = {
       enable = true;
       openFirewall = true;
+      extraSetFlags = [ "--operator=fra" ];
     };
     systemd.services.tailscaled.serviceConfig.Environment = [
       "TS_DEBUG_FIREWALL_MODE=nftables"

@@ -34,8 +34,17 @@ function M.setup()
   keymap('n', '<leader>ns', function() neogit.open({ kind = 'tab' }) end, { noremap = true, desc = 'Open neogit status' })
   keymap('n', '<leader>nc', function() neogit.open({ 'commit' }) end, { noremap = true, desc = 'Open neogit commit' })
 
-  -- Nvim tree
-  keymap('n', '<leader>pv', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle side panel' })
+  -- Review (upstream recommended bindings; leader is comma).
+  keymap('n', '<leader>rr', '<cmd>Review<CR>', { desc = 'Review working tree' })
+  keymap('n', '<leader>rc', '<cmd>Review commits<CR>', { desc = 'Review commits' })
+  keymap('n', '<leader>rb', '<cmd>Review branch<CR>', { desc = 'Review branch' })
+  keymap({ 'n', 'v' }, '<leader>rn', ':Review note<CR>', { desc = 'Review: note here' })
+  keymap('n', '<leader>re', '<cmd>Review edit<CR>', { desc = 'Review: edit comment' })
+  keymap('n', '<leader>rd', '<cmd>Review delete<CR>', { desc = 'Review: delete comment' })
+  keymap('n', '<leader>rx', '<cmd>Review export<CR>', { desc = 'Review: export' })
+
+  -- File browser
+  keymap('n', '<leader>pv', '<cmd>Telescope file_browser<CR>', { desc = 'Browse files' })
 
   -- LSP
   -- Goto X
@@ -52,11 +61,14 @@ function M.setup()
     vim.lsp.buf.format { async = true }
   end, { desc = 'LSP format' })
   -- Diagnostic
-  keymap('n', '[e', vim.diagnostic.goto_prev, { desc = 'LSP prev diagnostic' })
-  keymap('n', ']e', vim.diagnostic.goto_next, { desc = 'LSP next diagnostic' })
+  keymap('n', '[e', function() vim.diagnostic.jump { count = -1, float = true } end, { desc = 'LSP prev diagnostic' })
+  keymap('n', ']e', function() vim.diagnostic.jump { count = 1, float = true } end, { desc = 'LSP next diagnostic' })
 
   -- window picker
-  keymap('n', '<leader>w', function() require('nvim-window').pick() end, { noremap = true, silent = true, desc = 'Jump window' })
+  keymap('n', '<leader>w', function()
+    local window = require('window-picker').pick_window()
+    if window then vim.api.nvim_set_current_win(window) end
+  end, { silent = true, desc = 'Jump window' })
 end
 
 return M

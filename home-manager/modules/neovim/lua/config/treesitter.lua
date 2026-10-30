@@ -1,19 +1,19 @@
 local M = {}
 
 function M.setup()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = {
-      'c', 'lua', 'vim', 'help', 'query', -- required by treesitter
-      'rust', 'markdown', 'markdown_inline', -- rust
-      'typescript', 'javascript', 'python', -- good to have
-      'bash', 'json', 'yaml' -- also good to have
+  -- Parsers and queries are installed by Nix, not downloaded at runtime.
+  vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup('config-treesitter', { clear = true }),
+    pattern = {
+      'c', 'lua', 'vim', 'help', 'query',
+      'rust', 'markdown', 'typescript', 'typescriptreact',
+      'javascript', 'javascriptreact', 'python',
+      'sh', 'json', 'yaml', 'nix', 'go', 'ocaml',
     },
-    ignore_install = { 'help' },
-    auto_install = true,
-    highlight = {
-      enable = true,
-    },
-  }
+    callback = function(event)
+      vim.treesitter.start(event.buf)
+    end,
+  })
 end
 
 return M

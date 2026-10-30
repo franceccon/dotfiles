@@ -1,13 +1,13 @@
 local M = {}
 
 function M.setup()
+  vim.opt.termguicolors = true
+  vim.opt.background = 'light'
   require('catppuccin').setup {
     flavour = "latte",
   }
-  vim.cmd.colorscheme 'catppuccin'
+  vim.cmd.colorscheme 'catppuccin-latte'
 
-  -- set termguicolors to enable highlight groups
-  vim.opt.termguicolors = true
   -- show relative line numbers
   vim.opt.number = true
   vim.opt.relativenumber = true
@@ -22,23 +22,16 @@ function M.setup()
   vim.opt.undofile = true
   -- hide mode message
   vim.opt.showmode = false
+  -- start with an empty buffer instead of the intro message
+  vim.opt.shortmess:append('I')
   -- no wrapping
   vim.opt.wrap = false
 
-  -- transparent background
-  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-
   -- status line
-  local catppuccin_palette = require('catppuccin.palettes').get_palette()
-  local custom_catppuccin = require('lualine.themes.catppuccin')
-  custom_catppuccin.normal.a.bg = catppuccin_palette.flamingo
-  custom_catppuccin.normal.b.fg = catppuccin_palette.flamingo
-
   require('lualine').setup {
     options = {
       icons_enabled = false,
-      theme = custom_catppuccin,
+      theme = 'catppuccin-nvim',
       disabled_filetypes = {},
       component_separators = '|',
       section_separators = { left = '▒', right = '░'},
@@ -67,12 +60,7 @@ function M.setup()
   })
 
   -- window selector
-  vim.cmd[[hi NvimWindowNormal guibg=#dd7878 guifg=#eff1f5]]
-  require('nvim-window').setup {
-    normal_hl = 'NvimWindowNormal',
-    hint_hl = 'Bold',
-    border = 'none',
-  }
+  require('window-picker').setup {}
 end
 
 return M
