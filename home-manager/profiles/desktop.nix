@@ -56,6 +56,7 @@
     python315
     nodejs_26
     pnpm_11
+    typescript-language-server
     secretspec
     docker-client
     git
