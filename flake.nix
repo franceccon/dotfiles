@@ -32,10 +32,6 @@
       url = "github:ghostty-org/ghostty";
     };
 
-    opencode = {
-      url = "github:anomalyco/opencode";
-    };
-
     secretspec = {
       url = "github:cachix/secretspec/v0.21.1";
       flake = false;
@@ -155,26 +151,20 @@
             hello-custom = pkgs.hello-custom;
             # devtools
             zed-editor-bin = pkgs.zed-editor-bin;
-            delta-bin = pkgs.delta-bin;
-            opencode = pkgs.opencode;
             secretspec = pkgs.secretspec;
             apalache = pkgs.apalache;
-            dagger = pkgs.dagger;
             quint = pkgs.quint;
             gitbutler-cli = pkgs.gitbutler-cli;
-            mirrord-bin = pkgs.mirrord-bin;
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             amp-cli = pkgs.amp-cli;
+            # fonts
             berkeley-mono = pkgs.berkeley-mono;
             paper-mono = pkgs.paper-mono;
             # office
             mailspring = pkgs.mailspring;
             smile = pkgs.smile;
-            msty = pkgs.msty;
             tldraw = pkgs.tldraw;
-            cap = pkgs.cap;
-            en-croissant = pkgs.en-croissant;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
             darktable = pkgs.darktable;

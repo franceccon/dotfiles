@@ -3,12 +3,21 @@ let
   inherit inputs;
 in
 self: super: {
+  hello-custom = super.callPackage ../packages/hello-custom { };
+
   # from flakes
-  opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
 
   # dev tools
-  hello-custom = super.callPackage ../packages/hello-custom { };
+  # bump to a newer version than nixpkgs provides.
+  # https://static.ampcode.com/cli/cli-version.txt
+  amp-cli = super.amp-cli.overrideAttrs (old: rec {
+    version = "0.0.1793025586-g9211b5";
+    src = super.fetchurl {
+      url = "https://static.ampcode.com/cli/${version}/amp-linux-x64-baseline.gz";
+      hash = "sha256-ZI5blkikGEy5ivq+3AbHooQvO3+rBuDdU0mfEzlLhxk=";
+    };
+  });
   secretspec = super.secretspec.overrideAttrs (old: {
     version = "0.21.1";
     src = inputs.secretspec;
@@ -38,34 +47,17 @@ self: super: {
       ];
     runScript = "zed";
   };
-  delta-bin = super.callPackage ../packages/delta-bin { };
-  # bump to a newer version than nixpkgs provides.
-  # https://static.ampcode.com/cli/cli-version.txt
-  amp-cli = super.amp-cli.overrideAttrs (old: rec {
-    version = "0.0.1793025586-g9211b5";
-    src = super.fetchurl {
-      url = "https://static.ampcode.com/cli/${version}/amp-linux-x64-baseline.gz";
-      hash = "sha256-ZI5blkikGEy5ivq+3AbHooQvO3+rBuDdU0mfEzlLhxk=";
-    };
-  });
 
-  models-dev = super.callPackage ../packages/models-dev { };
   apalache = super.callPackage ../packages/apalache { };
-  mirrord-bin = super.callPackage ../packages/mirrord-bin { };
-  dagger = super.callPackage ../packages/dagger { };
   aptakube = super.callPackage ../packages/aptakube { };
   gitbutler-cli = super.callPackage ../packages/gitbutler-cli { };
 
   # desktop + eye candy
-  msty = super.callPackage ../packages/msty { };
   mailspring = super.callPackage ../packages/mailspring { };
-  smile = super.callPackage ../packages/smile { };
   tldraw = super.callPackage ../packages/tldraw { };
-  en-croissant = super.callPackage ../packages/en-croissant { };
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };
   darktable = super.callPackage ../packages/darktable { withAi = true; };
-  cap = super.callPackage ../packages/cap { };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
   paper-mono = super.callPackage ../packages/paper-mono { };

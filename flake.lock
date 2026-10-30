@@ -214,22 +214,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1790510107,
-        "narHash": "sha256-EVMNYv7hYDDD9TGVT/hIyTYgpiXA8y3m5xIEIxuGNU0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3181085bfd08663b6b9e60bc7a8395c2aaa741bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -246,24 +230,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
-        "type": "github"
-      }
-    },
-    "opencode": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1793349111,
-        "narHash": "sha256-syjKFg4/ykD9OA9Nck7HxkdrimbX74Hb/COyPJWQTIU=",
-        "owner": "anomalyco",
-        "repo": "opencode",
-        "rev": "92b2ca0dd727942e00aba3523ed141d53e78ea28",
-        "type": "github"
-      },
-      "original": {
-        "owner": "anomalyco",
-        "repo": "opencode",
         "type": "github"
       }
     },
@@ -296,7 +262,6 @@
         "madness": "madness",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur",
-        "opencode": "opencode",
         "oxalica": "oxalica",
         "secretspec": "secretspec"
       }

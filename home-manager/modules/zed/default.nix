@@ -41,15 +41,6 @@ in
           light = "Catppuccin Latte";
           dark = "Catppuccin Latte";
         };
-        edit_predictions = {
-          provider = "zed";
-          mode = "eager";
-        };
-        agent_servers.OpenCode = {
-          type = "custom";
-          command = "opencode";
-          args = [ "acp" ];
-        };
       };
     };
   };

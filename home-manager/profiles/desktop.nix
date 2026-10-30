@@ -11,7 +11,6 @@
       zed.enable = true;
       k9s.enable = true;
       ghostty.enable = true;
-      opencode.enable = false;
       ampcode.enable = true;
     };
     i18n.enable = true;
@@ -86,7 +85,6 @@
     samply
     valgrind
     azure-cli
-    dagger
     kubelogin
     kubelogin-oidc
     kubernetes-helm
@@ -133,7 +131,6 @@
     xournalpp
     cherry-studio
     tldraw
-    cap
     # photo
     nufraw-thumbnailer
     art
