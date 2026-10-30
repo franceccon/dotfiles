@@ -27,8 +27,8 @@ in
         ui_font_size = 17;
         buffer_font_size = 17;
         buffer_line_height = "standard";
-        ui_font_family = "Paper Mono";
-        buffer_font_family = "Paper Mono";
+        ui_font_family = "Berkeley Mono";
+        buffer_font_family = "Berkeley Mono";
         buffer_font_weight = 400;
         buffer_font_features = {
           ss01 = false; # ligatures
