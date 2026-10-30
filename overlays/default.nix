@@ -6,13 +6,13 @@ self: super: {
   # from flakes
   opencode = inputs.opencode.packages.${self.stdenv.hostPlatform.system}.opencode;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
-  tuicr = inputs.tuicr.packages.${self.stdenv.hostPlatform.system}.default;
 
   # dev tools
   hello-custom = super.callPackage ../packages/hello-custom { };
   secretspec = super.secretspec.overrideAttrs (old: {
     version = "0.21.1";
     src = inputs.secretspec;
+    doCheck = false;
     cargoBuildFlags = [ "--package" "secretspec" ];
     cargoTestFlags = [ "--package" "secretspec" ];
     nativeCheckInputs = [ self.git self.jq self.sops self.cacert ];

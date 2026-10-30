@@ -96,7 +96,6 @@
     clinfo
     gitbutler-cli
     hexyl
-    # tuicr
     quint
     # delta-bin
 
