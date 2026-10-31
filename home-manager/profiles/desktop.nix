@@ -74,7 +74,6 @@
     buildah
     skopeo
     kubectl
-    # code-cursor
     apalache
     duckdb
     bruno
@@ -96,6 +95,7 @@
     gitbutler-cli
     hexyl
     quint
+    typescript-language-server
     otel-tui
 
     # office
