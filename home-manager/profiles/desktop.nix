@@ -96,7 +96,7 @@
     gitbutler-cli
     hexyl
     quint
-    # delta-bin
+    otel-tui
 
     # office
     anki-bin
@@ -116,6 +116,7 @@
     mpv
     ffmpeg
     framesh
+    hex
     en-croissant
     kaya-go
     katrain

@@ -7,6 +7,7 @@ self: super: {
 
   # from flakes
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
+  hex = inputs.hex.packages.${self.stdenv.hostPlatform.system}.default;
 
   # dev tools
   # bump to a newer version than nixpkgs provides.

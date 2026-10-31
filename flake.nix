@@ -32,6 +32,10 @@
       url = "github:ghostty-org/ghostty";
     };
 
+    hex = {
+      url = "github:anomalyco/hex";
+    };
+
     secretspec = {
       url = "github:cachix/secretspec/v0.21.1";
       flake = false;
