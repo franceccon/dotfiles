@@ -93,6 +93,7 @@
     bun
     clinfo
     gitbutler-cli
+    kero
     hexyl
     quint
     typescript-language-server

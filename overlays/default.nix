@@ -56,6 +56,7 @@ self: super: {
   # desktop + eye candy
   mailspring = super.callPackage ../packages/mailspring { };
   tldraw = super.callPackage ../packages/tldraw { };
+  kero = super.callPackage ../packages/kero { };
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };
   darktable = super.callPackage ../packages/darktable { withAi = true; };
