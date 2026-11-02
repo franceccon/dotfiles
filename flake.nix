@@ -164,7 +164,6 @@
             apalache = pkgs.apalache;
             quint = pkgs.quint;
             gitbutler-cli = pkgs.gitbutler-cli;
-            kero = pkgs.kero;
             aptakube = pkgs.aptakube;
             ghostty = pkgs.ghostty;
             amp-cli = pkgs.amp-cli;
