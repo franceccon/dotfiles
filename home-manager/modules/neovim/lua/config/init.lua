@@ -8,6 +8,9 @@ function M.setup()
   -- Nix's plugin directory is read-only; use CodeDiff's polling fallback.
   vim.env.CODEDIFF_WATCHER_NO_AUTO_INSTALL = '1'
   require('codediff').setup {
+    diff = {
+      layout = 'inline',
+    },
     keymaps = {
       view = {
         -- toggle_explorer = '<leader>b', -- Conflicts with clear highlight.

@@ -1,5 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, flake-self, osConfig, ... }:
 {
+  imports = [ flake-self.inputs.rex.homeManagerModules.default ];
+
   fra = {
     programs = {
       bash.enable = true;
@@ -233,6 +235,15 @@
         brrr = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'";
         lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
       };
+    };
+  };
+
+  programs.rex.enable = true;
+  services.rex = {
+    enable = true;
+    tailscale = {
+      enable = true;
+      hostname = "rex-${osConfig.networking.hostName}";
     };
   };
 

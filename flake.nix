@@ -36,6 +36,11 @@
       url = "github:anomalyco/hex";
     };
 
+    rex = {
+      url = "https://pkgs.superlogical.com/rex/nix/snapshot.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     secretspec = {
       url = "github:cachix/secretspec/v0.21.1";
       flake = false;
