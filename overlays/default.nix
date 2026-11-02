@@ -8,17 +8,9 @@ self: super: {
   # from flakes
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
   hex = inputs.hex.packages.${self.stdenv.hostPlatform.system}.default;
+  amp-cli = inputs.llm-agents.packages.${self.stdenv.hostPlatform.system}.amp;
 
   # dev tools
-  # bump to a newer version than nixpkgs provides.
-  # https://static.ampcode.com/cli/cli-version.txt
-  amp-cli = super.amp-cli.overrideAttrs (old: rec {
-    version = "0.0.1793025586-g9211b5";
-    src = super.fetchurl {
-      url = "https://static.ampcode.com/cli/${version}/amp-linux-x64-baseline.gz";
-      hash = "sha256-ZI5blkikGEy5ivq+3AbHooQvO3+rBuDdU0mfEzlLhxk=";
-    };
-  });
   secretspec = super.secretspec.overrideAttrs (old: {
     version = "0.21.1";
     src = inputs.secretspec;

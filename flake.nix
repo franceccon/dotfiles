@@ -36,6 +36,10 @@
       url = "github:anomalyco/hex";
     };
 
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
+
     rex = {
       url = "https://pkgs.superlogical.com/rex/nix/snapshot.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
