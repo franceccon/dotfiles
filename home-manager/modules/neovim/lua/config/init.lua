@@ -5,6 +5,7 @@ function M.setup()
   require('config.ui').setup()
   require('config.telescope').setup()
   require('config.neogit').setup()
+  require('gitsigns').setup {}
   -- Nix's plugin directory is read-only; use CodeDiff's polling fallback.
   vim.env.CODEDIFF_WATCHER_NO_AUTO_INSTALL = '1'
   require('codediff').setup {

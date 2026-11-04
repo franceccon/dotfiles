@@ -75,6 +75,7 @@ in
         telescope-fzf-native-nvim
         telescope-file-browser-nvim
         neogit
+        gitsigns-nvim
         diffview-nvim
         review
         which-key-nvim
