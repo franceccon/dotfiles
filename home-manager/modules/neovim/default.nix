@@ -74,6 +74,7 @@ in
         telescope-nvim
         telescope-fzf-native-nvim
         telescope-file-browser-nvim
+        neo-tree-nvim
         neogit
         gitsigns-nvim
         diffview-nvim

@@ -4,6 +4,18 @@ function M.setup()
   require('config.keymaps').setup()
   require('config.ui').setup()
   require('config.telescope').setup()
+  require('neo-tree').setup {
+    window = {
+      position = 'current',
+      mappings = {
+        ['h'] = 'close_node',
+        ['l'] = 'open',
+      },
+    },
+    filesystem = {
+      hijack_netrw_behavior = 'open_current',
+    },
+  }
   require('config.neogit').setup()
   require('gitsigns').setup {}
   -- Nix's plugin directory is read-only; use CodeDiff's polling fallback.

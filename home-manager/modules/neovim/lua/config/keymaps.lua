@@ -44,7 +44,7 @@ function M.setup()
   keymap('n', '<leader>rx', '<cmd>Review export<CR>', { desc = 'Review: export' })
 
   -- File browser
-  keymap('n', '<leader>pv', '<cmd>Telescope file_browser<CR>', { desc = 'Browse files' })
+  keymap('n', '<leader>pv', '<cmd>Neotree current reveal<CR>', { desc = 'Browse files (Neo-tree)' })
 
   -- LSP
   -- Goto X
