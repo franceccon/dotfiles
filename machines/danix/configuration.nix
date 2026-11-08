@@ -26,6 +26,8 @@
     };
   };
 
+  services.tailscale.extraSetFlags = [ "--ssh" ];
+
   services.xserver.videoDrivers = [ "amdgpu" ];
   users.users.fra = {
     extraGroups = [ "i2c-dev" ];
