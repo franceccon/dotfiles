@@ -178,6 +178,7 @@
             mailspring = pkgs.mailspring;
             smile = pkgs.smile;
             tldraw = pkgs.tldraw;
+            rex-rune = pkgs.rex-rune;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
             darktable = pkgs.darktable;
