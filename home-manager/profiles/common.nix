@@ -1,6 +1,6 @@
 { pkgs, flake-self, nur, agenix, ... }:
 let
-  editor = "zed -n -w";
+  editor = "nvim";
 in
 {
   nixpkgs = {

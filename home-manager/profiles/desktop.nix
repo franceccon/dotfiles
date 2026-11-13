@@ -161,7 +161,7 @@
         signingkey = "ECCB5F68902EF443";
       };
       core = {
-        editor = "zed -n -w";
+        editor = "nvim";
         autocrlf = "input";
       };
       commit = {
