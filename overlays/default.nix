@@ -6,9 +6,10 @@ self: super: {
   hello-custom = super.callPackage ../packages/hello-custom { };
 
   # from flakes
+  antigravity-cli = inputs.llm-agents.packages.${self.stdenv.hostPlatform.system}.antigravity-cli;
   ghostty = inputs.ghostty.packages.${self.stdenv.hostPlatform.system}.ghostty;
-  hex = inputs.hex.packages.${self.stdenv.hostPlatform.system}.default;
   amp-cli = inputs.llm-agents.packages.${self.stdenv.hostPlatform.system}.amp;
+  opencode2 = inputs.llm-agents.packages.${self.stdenv.hostPlatform.system}.opencode2;
 
   # dev tools
   secretspec = super.secretspec.overrideAttrs (old: {

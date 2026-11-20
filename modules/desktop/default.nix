@@ -121,6 +121,10 @@ in
     # Enable Gnome.
     services.xserver = {
       enable = true;
+      xkb = {
+        layout = mkDefault "us";
+        variant = mkDefault "dvorak";
+      };
     };
     services.desktopManager.gnome.enable = true;
     services.displayManager.gdm.enable = true;

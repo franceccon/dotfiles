@@ -55,6 +55,7 @@
     bpftop
 
     # dev
+    antigravity-cli
     python315
     nodejs_26
     pnpm_11
@@ -99,6 +100,7 @@
     quint
     typescript-language-server
     otel-tui
+    opencode2
 
     # office
     anki-bin
