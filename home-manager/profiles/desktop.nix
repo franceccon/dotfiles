@@ -104,7 +104,7 @@
 
     # office
     anki-bin
-    chromium
+    google-chrome
     libqalculate
     qalculate-gtk
     inkscape
@@ -381,17 +381,17 @@
   xdg = {
     mime.enable = true;
     mimeApps.defaultApplications = {
-      "text/html" = "chromium.desktop";
-      "x-scheme-handler/http" = "chromium.desktop";
-      "x-scheme-handler/https" = "chromium.desktop";
-      "x-scheme-handler/about" = "chromium.desktop";
-      "x-scheme-handler/unknown" = "chromium.desktop";
+      "text/html" = "google-chrome.desktop";
+      "x-scheme-handler/http" = "google-chrome.desktop";
+      "x-scheme-handler/https" = "google-chrome.desktop";
+      "x-scheme-handler/about" = "google-chrome.desktop";
+      "x-scheme-handler/unknown" = "google-chrome.desktop";
     };
   };
 
   home.sessionVariables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
-    DEFAULT_BROSWER = "${pkgs.chromium}/bin/chromium";
+    DEFAULT_BROWSER = "${pkgs.google-chrome}/bin/google-chrome-stable";
   };
 }
