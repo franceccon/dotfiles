@@ -101,6 +101,7 @@
     typescript-language-server
     otel-tui
     opencode2
+    cloudflared
 
     # office
     anki-bin
