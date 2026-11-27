@@ -49,13 +49,12 @@ self: super: {
   # desktop + eye candy
   mailspring = super.callPackage ../packages/mailspring { };
   tldraw = super.callPackage ../packages/tldraw { };
-  rex-rune = super.callPackage ../packages/rex-rune { };
+  rex-rune-bin = super.callPackage ../packages/rex-rune-bin { };
   kaya-go = super.callPackage ../packages/kaya-go { };
   katrain = super.callPackage ../packages/katrain { };
   darktable = super.callPackage ../packages/darktable { withAi = true; };
   # fonts
   berkeley-mono = super.callPackage ../packages/berkeley-mono { };
-  paper-mono = super.callPackage ../packages/paper-mono { };
   # pragmata-pro = super.callPackage ../packages/pragmata-pro { };
   # monolisa = super.callPackage ../packages/monolisa { };
 

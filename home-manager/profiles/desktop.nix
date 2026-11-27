@@ -138,7 +138,7 @@
     xournalpp
     cherry-studio
     tldraw
-    rex-rune
+    rex-rune-bin
     # photo
     nufraw-thumbnailer
     art

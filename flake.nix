@@ -173,12 +173,11 @@
             amp-cli = pkgs.amp-cli;
             # fonts
             berkeley-mono = pkgs.berkeley-mono;
-            paper-mono = pkgs.paper-mono;
             # office
             mailspring = pkgs.mailspring;
             smile = pkgs.smile;
             tldraw = pkgs.tldraw;
-            rex-rune = pkgs.rex-rune;
+            rex-rune-bin = pkgs.rex-rune-bin;
             kaya-go = pkgs.kaya-go;
             katrain = pkgs.katrain;
             darktable = pkgs.darktable;

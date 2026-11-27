@@ -19,7 +19,6 @@ in
         noto-fonts-cjk-serif
 
         berkeley-mono
-        paper-mono
         jetbrains-mono
       ];
 
