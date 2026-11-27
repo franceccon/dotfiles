@@ -104,7 +104,6 @@ in
     # Setup docker/podman and qemu.
     programs.virt-manager.enable = true;
     virtualisation = {
-      waydroid.enable = true;
       podman = {
         enable = true;
         dockerSocket.enable = true;
